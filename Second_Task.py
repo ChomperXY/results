@@ -52,7 +52,18 @@ if __name__ == '__main__':
     axes4.set_ylabel('y')
     axes4.grid(True)
 
+    x10=1
+    x20 = 1
+    w1 = 1 + (x10 - 1) / 4
+    w2 = 1 + (x20 - 1) / 4
+    y3 = (np.sin(np.pi * w1))**2 + (w1 - 1)**2 * (1 + 10 * (np.sin(np.pi * w1 + 1))**2) + (w2 - 1)**2 * (1 + (np.sin(2 * np.pi * w2)**2))
 
+    fig.text(
+    0.04, 0.9,
+    f'Координаты({x10}, {x20})\n'
+    f'f({x10}, {x20}) = {y3:.4f}',
+    fontsize=11,
+    )
     
     plt.show()
 
