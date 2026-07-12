@@ -14,8 +14,21 @@ def makeData ():
 if __name__ == '__main__':
     x, y, z = makeData()
 
-    fig = plt.figure()
-    axes = fig.add_subplot(projection='3d')
+    fig = plt.figure(figsize=(14, 10))
+    axes1 = fig.add_subplot(221, projection='3d')
+    axes1.plot_surface(x, y, z, cmap='gray' )
+    axes1.set_title('y=f(x)')
+    axes1.set_xlabel('x1')
+    axes1.set_ylabel('x2')
+    axes1.set_zlabel('y=f(x1, x2)')
+    
+    axes2 = fig.add_subplot(222, projection='3d')
+    axes2.plot_surface(x, y, z, cmap='gray')
+    axes2.view_init(elev=90, azim=-90)
+    axes2.set_title('Вид сверху')
+    axes2.set_xlabel('x1')
+    axes2.set_ylabel('x2')
+    axes2.set_zlabel('y=f(x1, x2)')
 
-    axes.plot_surface(x, y, z)
     plt.show()
+
