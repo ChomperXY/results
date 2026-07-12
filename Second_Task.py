@@ -36,10 +36,23 @@ if __name__ == '__main__':
     w2 = 1 + (x20 - 1) / 4
     y1 = (np.sin(np.pi * w1))**2 + (w1 - 1)**2 * (1 + 10 * (np.sin(np.pi * w1 + 1))**2) + (w2 - 1)**2 * (1 + (np.sin(2 * np.pi * w2)**2))
     axes3.plot(x1, y1)
-    axes3.set_title('y = f(x1, x20)')
+    axes3.set_title('y = f(x1)')
     axes3.set_xlabel('x1')
     axes3.set_ylabel('y')
+    axes3.grid(True)
  
+    axes4 = fig.add_subplot(224)
+    x10=1
+    w1 = 1 + (x10 - 1) / 4
+    w2 = 1 + (x2 - 1) / 4
+    y2 = (np.sin(np.pi * w1))**2 + (w1 - 1)**2 * (1 + 10 * (np.sin(np.pi * w1 + 1))**2) + (w2 - 1)**2 * (1 + (np.sin(2 * np.pi * w2)**2))
+    axes4.plot(x1, y2)
+    axes4.set_title('y = f(x2)')
+    axes4.set_xlabel('x1')
+    axes4.set_ylabel('y')
+    axes4.grid(True)
 
+
+    
     plt.show()
 
