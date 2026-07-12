@@ -30,5 +30,16 @@ if __name__ == '__main__':
     axes2.set_ylabel('x2')
     axes2.set_zlabel('y=f(x1, x2)')
 
+    axes3 = fig.add_subplot(223)
+    x20 = 1
+    w1 = 1 + (x1 - 1) / 4
+    w2 = 1 + (x20 - 1) / 4
+    y1 = (np.sin(np.pi * w1))**2 + (w1 - 1)**2 * (1 + 10 * (np.sin(np.pi * w1 + 1))**2) + (w2 - 1)**2 * (1 + (np.sin(2 * np.pi * w2)**2))
+    axes3.plot(x1, y1)
+    axes3.set_title('y = f(x1, x20)')
+    axes3.set_xlabel('x1')
+    axes3.set_ylabel('y')
+ 
+
     plt.show()
 
