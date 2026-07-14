@@ -13,11 +13,15 @@ plt.plot(x, y)
 plt.show()
 
 root = ET.Element("data")
-xval = ET.SubElement(root, "xdata")
-yval = ET.SubElement(root, "ydata")
-for xi, in zip(x):
-    ET.SubElement(xval, "x").text = f"{xi:.4f}"
-for yi, in zip(y):
-    ET.SubElement(yval, "y").text = f"{yi:.4f}"
+xdata = ET.SubElement(root, "xdata")
+for value in x:
+    elem = ET.SubElement(xdata, "x")
+    elem.text = f"{value:.2f}"
+
+ydata = ET.SubElement(root, "ydata")
+for value in y:
+    elem = ET.SubElement(ydata, "y")
+    elem.text = f"{value:.2f}"
 tree = ET.ElementTree(root)
+ET.indent(tree, space="    ", level=0)
 tree.write("First_Task.xml", encoding="utf-8", xml_declaration=True)
