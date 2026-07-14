@@ -12,3 +12,19 @@ read.add_argument("--xmax", type=float)
 
 args = read.parse_args()
 
+tree = ET.parse(args.filename)
+root = tree.getroot()
+
+x = []
+y = []
+
+for value in root.find("xdata"):
+    x.append(float(value.text))
+for value in root.find("ydata"):
+    y.append(float(value.text))
+plt.figure(figsize=(10, 5))
+plt.plot(x, y)
+plt.title("y=f(x)")
+plt.xlabel("X")
+plt.ylabel("Y")
+plt.grid(True)
