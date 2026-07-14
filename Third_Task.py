@@ -28,3 +28,15 @@ plt.title("y=f(x)")
 plt.xlabel("X")
 plt.ylabel("Y")
 plt.grid(True)
+
+if args.xmin is not None:
+    xmin = args.xmin
+else:
+    xmin = min(x)
+if args.xmax is not None:
+    xmax = args.xmax
+else:
+    xmax = max(x)
+plt.xlim(xmin, xmax)
+
+plt.show()
